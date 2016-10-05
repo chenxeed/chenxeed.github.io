@@ -1,0 +1,315 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <title>Alien Invasion</title>
+
+        <!--Style-->
+        <link href="assets/css/normalize.css" type="text/css" rel="stylesheet" />
+        <link href="assets/css/animate.css" type="text/css" rel="stylesheet" />
+        <link href="assets/css/style.css" type="text/css" rel="stylesheet" />
+        <link href="assets/css/raphael.css" type="text/css" rel="stylesheet" />
+
+        <script src="assets/js/raphael.js" charset="utf-8" type="text/javascript"></script>
+
+    </head>
+
+    <body>
+        <audio id="soundLaser" src="assets/sound/laser.wav" preload="auto"></audio>
+        <header>
+            <div class="header">
+                <div class="hangboard-wrapper">
+                    <div class="hangboard animated">Alien Invasion!</div>
+                </div>
+                <div class="title"></div>
+            </div>
+        </header>
+
+        <div class="control">
+            <div class="statistic">
+                Time : <span id="timer"></span><br>
+                Spawn : <span id="spawn"></span>
+                Dead : <span id="dead"></span>
+            </div>
+            <div>
+                Destroy Type :
+                <select id="destroyType">
+                    <option value="drag">Drag</option>
+                    <option value="click">Click</option>
+                    <option value="hover">Hover</option>
+                </select>
+            </div>
+            <div>
+                <button id="buttonStart" onclick="startGame();">START</button>
+                <button id="buttonPause" style="display:none" onclick="pauseGame();">PAUSE</button>
+                <button id="buttonContinue" style="display:none" onclick="continueGame();">CONTINUE</button>
+                <button id="buttonStop" style="display:none" onclick="finishGame();">STOP</button>
+            </div>
+        </div>
+
+        <div class="background" id="viewport">
+            <div id="world"></div>
+        </div>
+
+        <div id="raphaelCanvas" class="raphael-canvas">
+            <script>
+                    //Configuration
+                    var move_speed = 10; //Standard : 50, reduce to faster
+                    var max_circle = 0; //Set if you want to have maximum circle generated
+                    var circle_delay = 100; //Standard : 1000 (1 second)
+                    var circle_size = 30; //Size of the circle
+                    var destroy_type = 'hover'; //How to destroy the circle
+                    var custom_config = true;
+
+                    //Sound
+                    var audio_laser = new Audio();
+
+                    // Creates canvas 320 × 200 at 10, 50
+                    var paper = Raphael('raphaelCanvas');
+
+                    // Creates finish line
+                    var finish = paper.rect(450, 0, 500, 500);
+                    finish.toBack();
+                    finish.attr("fill", "green");
+                    finish.attr("stroke", "black");
+
+                    // Creates result box
+                    var result_set = paper.set();
+                    var result_box = paper.rect(40, 40, 420, 420, 10);
+                    var result_score = paper.text(150, 150, '');
+                    result_box.toFront();
+                    result_box.attr('fill', 'yellow');
+                    var result_text = paper.text(100, 100, "GAME OVER!\nYour Score Result is :");
+
+                    // Creates pause box
+                    var pause_box = paper.rect(0, 0, 500, 500);
+                    pause_box.attr("fill", "blue");
+                    pause_box.attr("opacity", 0.5);
+                    pause_box.toFront();
+                    pause_box.hide();
+
+                    result_set.push(result_box);
+                    result_set.push(result_text);
+                    result_set.hide();
+
+                    var start = function() {
+                        this.ox = this.attr("x");
+                        this.oy = this.attr("y");
+
+                        this.animate({width: circle_size + 10, fill: '#f0f'}, 200);
+                    },
+                            move = function(dx, dy) {
+                        if (this.ox + dx > 0 && this.ox + dx < 500)
+                            this.animate({x: this.ox + dx}, 200);
+                            playSoundLaser();
+                    },
+                            up = function() {
+                        this.animate({width: circle_size, fill: '#f00'}, 200);
+                    };
+
+                    // Creates circle
+                    var circle = new Array();
+                    var circle_move = new Array();
+                    var circle_count = 0;
+                    var circle_die = 0;
+                    var timer = 0;
+                    var interval_timer;
+                    var is_game_started = false;
+
+                    var generate_circle;
+
+                    function startGame() {
+                        result_set.hide();
+                        if (is_game_started === false) {
+
+                            $('#buttonStart').hide();
+                            $('#buttonPause').show();
+                            $('#buttonStop').show();
+
+                            destroy_type = $('#destroyType').val();
+                            $('#destroyType').prop('disabled', true);
+                            if (custom_config === true) {
+                                switch (destroy_type) {
+                                    case 'drag' :
+                                        move_speed = 50;
+                                        max_circle = 50;
+                                        circle_delay = 1000;
+                                        break;
+                                    case 'click':
+                                        move_speed = 50;
+                                        max_circle = 0;
+                                        circle_delay = 200;
+                                        break;
+                                    case 'hover':
+                                        move_speed = 20;
+                                        max_circle = 0;
+                                        circle_delay = 100;
+                                        break;
+                                }
+                            }
+
+                            is_game_started = true;
+                            generateCircle();
+                        }
+                    }
+
+                    function pauseGame() {
+                        $('#buttonPause').hide();
+                        $('#buttonContinue').show();
+                        pause_box.show();
+                        stopCircle();
+                    }
+
+                    function continueGame() {
+                        $('#buttonContinue').hide();
+                        $('#buttonPause').show();
+                        pause_box.hide();
+                        continueCircle();
+                        generateCircle();
+                    }
+
+                    function finishGame() {
+                        stopCircle();
+                        showResult();
+                        resetCircle();
+                        is_game_started = false;
+                        timer = 0;
+
+                        $('#buttonStart').show();
+                        $('#buttonPause').hide();
+                        $('#buttonContinue').hide();
+                        $('#buttonStop').hide();
+                        $('#destroyType').prop('disabled', false);
+                    }
+
+                    function startCount() {
+                        var time_range = 0;
+                        var offset = Date.now();
+                        var now, range;
+
+                        $('#timer').html(timer);
+                        $('#spawn').html(circle_count);
+                        $('#dead').html(circle_die);
+
+                        interval_timer = setInterval(function() {
+                            now = Date.now();
+                            range = now - offset;
+                            offset = now;
+                            timer = timer + range;
+                            $('#timer').html(timer / 1000);
+                            $('#spawn').html(circle_count);
+                            $('#dead').html(circle_die);
+                        }, time_range);
+                    }
+
+                    function stopCount() {
+                        clearInterval(interval_timer);
+                    }
+
+                    function generateCircle() {
+                        generate_circle = setInterval(function() {
+
+                            if (circle_count === 0) {
+                                startCount();
+                            }
+
+                            //circle[circle_count] = paper.circle(0, Math.floor(Math.random() * 500), 10);
+                            circle[circle_count] = paper.image('assets/image/grey_alien.png', 0, Math.floor(Math.random() * (500 - circle_size)), circle_size, circle_size);
+                            circle[circle_count].attr("fill", "#f00");
+                            circle[circle_count].attr("stroke", "#fff");
+                            circle[circle_count].hover(start, up);
+                            circle[circle_count].toBack();
+
+                            switch (destroy_type) {
+                                case 'drag' :
+                                    paper.set(circle[circle_count]).drag(move, start, up);
+                                    break;
+                                case 'click':
+                                    paper.set(circle[circle_count]).click(function() {
+                                        this.remove();
+                                        playSoundLaser();
+                                        circle_die++;
+                                    });
+                                    break;
+                                case 'hover':
+                                    paper.set(circle[circle_count]).hover(function() {
+                                        this.remove();
+                                        playSoundLaser();
+                                        circle_die++;
+                                    });
+                                    break;
+                            }
+
+                            circle_move[circle_count] = runCircle(circle[circle_count]);
+
+                            circle_count++;
+
+                            if (max_circle > 0 && circle_count >= max_circle) {
+                                clearInterval(generate_circle);
+                            }
+                        }, circle_delay);
+                    }
+
+                    function runCircle(thecircle) {
+                        var circleRightFunc = this.circleRight;
+                        return setInterval(circleRightFunc, move_speed, thecircle);
+                    }
+
+                    function circleRight(thecircle) {
+                        if ((thecircle.attr('x') + 1) < 500)
+                            thecircle.attr('x', thecircle.attr('x') + 1);
+
+                        if ((thecircle.attr('x') + 1) >= 450)
+                            finishGame();
+                    }
+
+                    function stopCircle() {
+                        stopCount();
+                        clearInterval(generate_circle);
+                        console.log(circle_count);
+                        for (var i = 0; i < circle_count; i++) {
+                            clearInterval(circle_move[i]);
+                        }
+                    }
+
+                    function continueCircle() {
+                        var count = circle_count;
+                        for (var i = 0; i < count; i++) {
+                            circle_move[i] = runCircle(circle[i]);
+                        }
+                    }
+
+                    function resetCircle() {
+                        for (var i = 0; i < circle_count; i++) {
+                            circle[i].remove();
+                        }
+                        circle_count = 0;
+                        circle_die = 0;
+                    }
+
+                    function showResult() {
+                        var txt_score = "Time : " + (timer / 1000) + " seconds\n" +
+                                "Alien Spawned : " + circle_count + "\n" +
+                                "Alien killed : " + circle_die
+                                ;
+                        result_score.remove();
+                        result_score = paper.text(150, 150, txt_score);
+                        result_set.push(result_score);
+                        result_set.show();
+                    }
+                    
+                    function playSoundLaser(){
+                        audio_laser.src = document.getElementById('soundLaser').src;
+                        audio_laser.load();
+                        audio_laser.play();
+                    }
+
+            </script>
+        </div>
+
+
+        <script src="assets/js/jquery-1.10.2.js" charset="utf-8" type="text/javascript"></script>
+        <script src="assets/js/main.js" charset="utf-8" type="text/javascript"></script>
+    </body>
+
+</html>

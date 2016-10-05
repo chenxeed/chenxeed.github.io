@@ -1,0 +1,16 @@
+.raphael-canvas {
+    width: 500px; height: 500px; margin: auto;
+    background: rgba(0,0,0,0.5); border: 3px white;
+}
+.control {
+    width: 480px; margin: 10px auto;
+    border: 3px solid black; border-radius: 10px;
+    background: white; font-size: 20px;
+    padding: 10px; text-align: center;
+}
+.statistic {
+    text-align: left;
+    font-family: monospace;
+    background: black; color: white;
+    padding: 10px;
+}
