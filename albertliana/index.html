@@ -1,0 +1,107 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
+<link rel="stylesheet" href="src/css/bootstrap.css">
+<link rel="stylesheet" href="src/css/background-slide.css">
+<link rel="stylesheet" href="src/css/accordion.css">
+<link rel="stylesheet" href="src/css/main.css">
+</head>
+<body>
+
+  <div class="wrapper container center-block">
+
+    <ul class="cb-slideshow">
+      <li><span>Image 01</span></li>
+      <li><span>Image 02</span></li>
+      <li><span>Image 03</span></li>
+      <li><span>Image 04</span></li>
+      <li><span>Image 05</span></li>
+      <li><span>Image 06</span></li>
+    </ul>
+
+    <div class="pages intro">
+      <h2><i>Dear <b>John</b></i>,</h2>
+      <div class="sub">Dengan berbahagia, kami mengundang Anda ke Pesta Pernikahan kami</div>
+      <div class="main">Albert & Liana</div>
+    </div>
+
+    <div class="pages venue">
+      <input class="accordion-toggle-checkbox" id="toggle-venue" type="checkbox" />
+      <label class="tab-title" for="toggle-venue"><span class="accordion-list-style">&#9656;</span> Save the Date!</label>
+      <div class="accordion-content row ">
+        <h2>Sabtu, 5 November 2016</h2>
+        <div class="col-md-6 text-center">
+          <h3>Pemberkatan</h3>
+          <p>
+            Vihara Theravada Buddha Sasana, Jl. Kelapa Nias X Blok PE 2 No. 17, Kelapa Gading, Jakarta Utara <a href="#mapMatrimony" id="openMapMatrimony">(Peta)</a>
+          </p>
+          <p>9.00 - 10.00 WIB</p>
+        </div>
+
+        <!-- Map to Holy Matrimony -->
+        <div id="mapMatrimony">
+          <div class="closebt-container close-mapMatrimony">
+            <img class="closebt" src="src/images/closebt.svg">
+          </div>
+          <div class="modal-content">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15867.416586273333!2d106.9131742!3d-6.1502817!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x57be249161f9c99f!2sVihara+Theravada+Buddha+Sasana!5e0!3m2!1sen!2sid!4v1476637272312" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-6 text-center">
+          <h3>Resepsi</h3>
+          <p>
+            Grand Wedding Hall Gajah Mada Plaza Lt.7 Grand, Jl. Gajah Mada No. 19-26, Jakarta Pusat <a href="#mapReception" id="openMapReception">(Peta)</a>
+          </p>
+          <p>19.00 - 21.00 WIB</p>
+        </div>
+
+        <!-- Map to Reception -->
+        <div id="mapReception">
+          <div class="closebt-container close-mapReception">
+            <img class="closebt" src="src/images/closebt.svg">
+          </div>
+          <div class="modal-content">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4064.18973834423!2d106.8168884354116!3d-6.1604319576730395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5df43fc1ddb%3A0x36a942c963777803!2sGajah+mada+Plaza!5e0!3m2!1sen!2sid!4v1476640514911" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pages gallery">
+      <input class="accordion-toggle-checkbox" id="toggle-gallery" type="checkbox" />
+      <label class="tab-title" for="toggle-gallery"><span class="accordion-list-style">&#9656;</span> Gallery</label>
+      <div class="accordion-content">
+        <div class="gallery-list">
+          <div><img src="/src/images/gallery/1.jpg" /></div>
+          <div><img src="/src/images/gallery/2.jpg" /></div>
+          <div><img src="/src/images/gallery/3.jpg" /></div>
+          <div><img src="/src/images/gallery/4.jpg" /></div>
+          <div><img src="/src/images/gallery/5.jpg" /></div>
+          <div><img src="/src/images/gallery/6.jpg" /></div>
+          <div><img src="/src/images/gallery/7.jpg" /></div>
+          <div><img src="/src/images/gallery/8.jpg" /></div>
+          <div><img src="/src/images/gallery/9.jpg" /></div>
+          <div><img src="/src/images/gallery/10.jpg" /></div>
+          <div><img src="/src/images/gallery/11.jpg" /></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pages rsvp">
+      <input class="accordion-toggle-checkbox" id="toggle-rsvp" type="checkbox" />
+      <label class="tab-title" for="toggle-rsvp"><span class="accordion-list-style">&#9656;</span> RSVP</label>
+      <div class="accordion-content row">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeMkJK9Y90-H6sChdnEpUMfdjzZVIO7c6DjNp1d3mpZT2XDeg/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+      </div>
+    </div>
+
+  </div>
+  
+  <script src="src/js/jquery.js"></script>
+  <script src="src/js/jquery.scrollTo.js"></script>
+  <script src="src/js/animatedModal.min.js"></script>
+  <script src="src/js/masonry.pkgd.min.js"></script>
+	<script src="src/js/main.js"></script>
+</body>
+</html>

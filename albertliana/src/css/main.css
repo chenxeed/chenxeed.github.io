@@ -1,0 +1,151 @@
+@import 'https://fonts.googleapis.com/css?family=Dancing+Script|Josefin+Sans';
+body {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+h2 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.wrapper {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  background-color: rgba(174, 224, 234, 0.3); 
+  border-radius: 20px; 
+}
+
+.pages {
+  position: relative;
+}
+
+.pages .row {
+  margin: 0;
+}
+
+.pages .accordion-content {
+  background: rgba(174, 224, 234,0.2);
+  margin: 0 10px;
+}
+
+.intro {
+  padding: 40px 10%;
+  text-align: center;
+}
+
+.intro .sub {
+  margin-bottom: 15px;
+  font-size: 28px;
+}
+.intro .main {
+  margin: 25px 0;
+  font-family: 'Dancing Script', cursive;
+  font-size: 106px;
+}
+
+.tab-title {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  font-family: 'Dancing Script', cursive;
+  font-size: 40px;
+  background: rgba(174, 224, 234,0.2);
+  border-radius: 50px;
+  margin: 5px 10px 0 10px;
+  padding-left: 15px;
+  transition: 0.2s all;
+  font-weight: normal;
+}
+.tab-title:hover {
+  background: rgba(174, 224, 234,1);
+  font-weight: bold;
+}
+
+.accordion-toggle-checkbox:checked ~ .tab-title {
+  border-radius: 50px 50px 0 0;
+  transition: 0.5s all;
+  background: rgba(174, 224, 234,0.8);  
+}
+
+.accordion-toggle-checkbox:checked ~ .accordion-content {
+  border-radius: 0 0 50px 50px;
+  background: rgba(174, 224, 234,0.8);  
+}
+
+
+
+.venue {
+}
+
+.venue h3 {
+  text-align: center;
+}
+
+.venue .accordion-content {
+  height: 220px;
+}
+
+@media (max-width: 991px) {
+
+  .venue .accordion-content {
+    height: 450px;
+    font-size: 16px;
+  }
+
+}
+
+
+.gallery .accordion-content {
+  overflow: auto;
+}
+
+.gallery .accordion-content {
+  height: 800px;
+}
+
+.gallery .gallery-list {
+  margin: 20px;
+}
+
+.gallery .gallery-list > div {
+  width: 140px;
+  margin-bottom: 10px;
+}
+
+.gallery .gallery-list > div img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+
+.rsvp .accordion-content {
+  height: 850px;
+}
+
+/* Misc */
+
+/* Thanks to http://joaopereirawd.github.io/animatedModal.js/ */
+.closebt-container {
+  position: relative;
+  width:100%;
+  text-align:center;
+  margin:20px 0;
+}
+
+.closebt {
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  cursor:pointer;
+}
+
+.closebt:hover {
+  transform:rotate(90deg);
+}
+
+.modal-content {
+  margin: 10px;
+}
