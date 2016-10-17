@@ -13,14 +13,19 @@ $(document).ready(function(){
 
   for (var origin in invitee_by_origin) {
     if (invitee_by_origin.hasOwnProperty(origin)) {
-      $lists.append('<h1>'+origin+'</h1>');
+      var safe_origin = origin.replace(/[!\"#$%&'\(\)\*\+,\.\/:;<=>\?\@\[\\\]\^`\{\|\}~]/g, '');
+      var title_html =
+        '<input class="accordion-toggle-checkbox" id="toggle-'+safe_origin+'" type="checkbox" />'+
+        '<label class="tab-title" for="toggle-'+safe_origin+'">'+
+          '<span class="accordion-list-style">&#9656;</span>'+origin+
+        '</label>'
+      ;
       var invitee_list = invitee_by_origin[origin];
-      invitee_list.forEach(function(invitee){
+      var invitee_html = invitee_list.reduce(function(prev, invitee){
         var url = getURLFromShorten( toShorten(invitee.name, invitee.origin) );
-        $lists.append(
-          '| <span><a href="'+url+'" target="_blank">'+invitee.name+'</a></span> '
-        );
-      });
+        return prev+'| <span><a href="'+url+'" target="_blank">'+invitee.name+'</a></span> ';
+      }, '');
+      $lists.append('<div>'+title_html+'<div class="accordion-content">'+invitee_html+'</div></div>');
 
     }
   }
