@@ -1,5 +1,17 @@
 $(document).ready( function(e){
 
+  // validate if visitor have correct ID
+  var shorten = getShortenFromURL( window.location.href );
+  var invitee = getInviteeFromShorten(shorten);
+  if(!invitee){
+    $('#openVisitorInfo').animatedModal();
+    $('#openVisitorInfo').click();
+    return;
+  } else {
+    $('#visitorInfoWrapper').remove();
+    $('#inviteeName').text(invitee.name);
+  }
+
   // scroll into tab
   $('.tab-title').click(function(e){
     setTimeout(function(){

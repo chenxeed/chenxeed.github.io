@@ -8,6 +8,12 @@ h2 {
   font-size: 40px;
 }
 
+/* for visitor */
+.visitor {
+  font-size: 20px;
+  text-align: center;
+}
+
 .wrapper {
   margin-top: 20px;
   margin-bottom: 40px;
@@ -99,7 +105,7 @@ h2 {
 
 .gallery .accordion-content {
   overflow: auto;
-  height: 570px;
+  height: 600px;
 }
 
 .gallery .gallery-list {
@@ -116,11 +122,12 @@ h2 {
 .gallery .gallery-list > div img {
   width: 100%;
   border-radius: 10px;
+  vertical-align: top;
 }
 
 @media (max-width: 768px) {
   .gallery .accordion-content {
-    height: 500px;
+    height: 720px;
   }
 
   .gallery .gallery-list > div {

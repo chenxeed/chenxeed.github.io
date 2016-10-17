@@ -22,7 +22,7 @@
     </ul>
 
     <div class="pages intro">
-      <h2><i>Dear <b>John</b></i>,</h2>
+      <h2><i>Dear <b id="inviteeName">John</b></i>,</h2>
       <div class="sub">Dengan berbahagia, kami mengundang Anda ke Pesta Pernikahan kami</div>
       <div class="main">Albert & Liana</div>
     </div>
@@ -86,6 +86,7 @@
           <div><img src="src/images/gallery/08_tn.jpg" /></div>
           <div><img src="src/images/gallery/09_tn.jpg" /></div>
           <div><img src="src/images/gallery/10_tn.jpg" /></div>
+          <div><img src="src/images/wedding-invitation.png" /></div>
         </div>
       </div>
     </div>
@@ -100,11 +101,24 @@
 
   </div>
 
+  <!-- Visitor info -->
+  <div id="visitorInfoWrapper">
+    <a href="#visitorInfo" id="openVisitorInfo">Click</a>
+    <div id="visitorInfo" class="container visitor">
+      <div class="modal-content">
+        <h1>Kami mohon maaf</h1>
+        <p>Website undangan Albert & Liana hanya dapat diakses oleh tamu undangan yang telah menerima URL yang kami kirimkan kepada para tamu undangan. Jika Anda ingin merequest atau bertanya perihal undangan, silahkan hubungi Albert di 08170756186.</p>
+        <p>Terimakasih dan semoga Anda berbahagia</p>
+      </div>
+    </div>
+  </div>
+
   
   <script src="src/js/jquery.js"></script>
   <script src="src/js/jquery.scrollTo.js"></script>
   <script src="src/js/animatedModal.min.js"></script>
   <script src="src/js/viewer.min.js"></script>
+  <script src="src/js/invitation.js"></script>
 	<script src="src/js/main.js"></script>
 </body>
 </html>
