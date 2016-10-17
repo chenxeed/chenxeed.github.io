@@ -18,7 +18,7 @@ function getShortenFromURL(url){
 }
 
 function getURLFromShorten(shorten){
-  return window.location.origin+'/index.html?o='+shorten;
+  return window.location.origin+'/albertliana/index.html?o='+shorten;
 }
 
 var invitation_names = [{"name":"Mr Agung S Santosa","subname":"Jakarta","printed":"O","origin":"Binus"},
