@@ -4,6 +4,7 @@ $(document).ready( function(e){
   var shorten = getShortenFromURL( window.location.href );
   var invitee = getInviteeFromShorten(shorten);
   if(!invitee){
+    $('#visitorInfoWrapper').show();
     $('#openVisitorInfo').animatedModal();
     $('#openVisitorInfo').click();
     return;
