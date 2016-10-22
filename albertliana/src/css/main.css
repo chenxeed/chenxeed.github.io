@@ -102,6 +102,14 @@ h2 {
 
 }
 
+@media (max-width: 320px) {
+
+  .venue .accordion-content {
+    height: 570px;
+  }
+
+}
+
 
 .gallery .accordion-content {
   overflow: auto;
