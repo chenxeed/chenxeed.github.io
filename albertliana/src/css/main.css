@@ -1,6 +1,7 @@
 @import 'https://fonts.googleapis.com/css?family=Dancing+Script|Josefin+Sans';
 body {
   font-family: 'Josefin Sans', sans-serif;
+  min-width: 320px;
 }
 
 h2 {
@@ -105,7 +106,7 @@ h2 {
 @media (max-width: 320px) {
 
   .venue .accordion-content {
-    height: 610px;
+    height: 650px;
   }
 
 }
@@ -146,6 +147,14 @@ h2 {
 .rsvp .accordion-content {
   height: 850px;
 }
+
+@media (max-width: 768px) {
+  .rsvp .accordion-content {
+    height: 1080px;
+  }
+}
+
+
 
 /* Misc */
 
