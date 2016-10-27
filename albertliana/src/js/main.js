@@ -3,6 +3,7 @@ $(document).ready( function(e){
   // validate if visitor have correct ID
   Invitation(function(invitation){
 
+
     var shorten = invitation.getShortenFromURL( window.location.href );
     var invitee = invitation.getInviteeFromShorten(shorten);
     if(!invitee){
@@ -16,6 +17,9 @@ $(document).ready( function(e){
       initViews();
     }
 
+    setTimeout(function(){
+      $('#loadingWrapper').fadeOut(500);
+    }, 100);
   });
 
   function initViews(){

@@ -10,6 +10,21 @@ h2 {
 }
 
 /* for visitor */
+.loading-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 1000;
+  background: #66CEFF;
+  text-align: center;
+}
+.loading-overlay img {
+  width: 100%;
+  max-width: 300px;
+}
+
+
 .visitor {
   font-size: 20px;
   text-align: center;
@@ -83,32 +98,22 @@ h2 {
 
 
 
-.venue {
+.venue .tab-title {
+  border-radius: 10px 10px 0 0;
+  transition: 0.5s all;
+  background: rgba(174, 224, 234,0.8);
 }
 
 .venue h3 {
   text-align: center;
 }
 
-.venue .accordion-content {
-  height: 280px;
+.venue .row {
   font-size: 20px;
-}
-
-@media only screen and (max-width: 991px) {
-
-  .venue .accordion-content {
-    height: 550px;
-  }
-
-}
-
-@media only screen and (max-width: 321px) {
-
-  .venue .accordion-content {
-    height: 700px;
-  }
-
+  background: rgba(174, 224, 234,0.8);  
+  border-radius: 0 0 10px;
+  margin: 0;
+  margin: 0 10px;
 }
 
 
