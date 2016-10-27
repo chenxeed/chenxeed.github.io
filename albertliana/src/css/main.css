@@ -95,7 +95,7 @@ h2 {
   font-size: 20px;
 }
 
-@media (max-width: 991px) {
+@media only screen and (max-width: 991px) {
 
   .venue .accordion-content {
     height: 520px;
@@ -103,7 +103,7 @@ h2 {
 
 }
 
-@media (max-width: 320px) {
+@media only screen and (max-width: 320px) {
 
   .venue .accordion-content {
     height: 650px;
@@ -134,7 +134,7 @@ h2 {
   vertical-align: top;
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .gallery .accordion-content {
     height: 720px;
   }
@@ -148,7 +148,7 @@ h2 {
   height: 850px;
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .rsvp .accordion-content {
     height: 1080px;
   }
