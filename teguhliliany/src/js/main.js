@@ -35,33 +35,6 @@ $(document).ready( function(e){
     $('#openMapMatrimony').animatedModal({color: 'rgb(78, 78, 78)'});
     $('#openMapReception').animatedModal({color: 'rgb(78, 78, 78)'});
 
-    // gallery list
-    $('.gallery-list').masonry({
-      itemSelector: 'div',
-      gutter: 10,
-      fitWidth: true
-    });
-
-    // viewer
-    
-    // initialize it first to make it can open on first click
-    // .... don't ask me why :p
-    new Viewer( $('.gallery-list')[0], {
-      url: function(img){
-        return img.src;
-      }
-    });
-    // open the viewer on click
-    $('.gallery-list').click(function(){
-
-      var viewer = new Viewer(this, {
-        url: function(img){
-          return img.src;
-        }
-      });
-
-    });
-
   }
 
 
