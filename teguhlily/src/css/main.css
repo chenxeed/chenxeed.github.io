@@ -66,6 +66,19 @@ h2 {
   font-size: 106px;
 }
 
+@media only screen and (max-width: 768px) {
+  .intro .main {
+    font-size: 72px;    
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .intro .main {
+    font-size: 48px;    
+  }
+}
+
+
 .tab-title {
   position: relative;
   display: block;
@@ -139,6 +152,7 @@ h2 {
 }
 
 @media only screen and (max-width: 768px) {
+
   .gallery .accordion-content {
     height: 720px;
   }

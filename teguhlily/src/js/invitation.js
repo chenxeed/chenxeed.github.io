@@ -35,7 +35,7 @@ function Invitation(cb){
   }
 
   function getURLFromPassword(password){
-    return window.location.origin+'/teguhliliany/index.html?o='+password;
+    return window.location.origin+'/teguhlily/index.html?o='+password;
   }
 
 }
