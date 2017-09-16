@@ -1,6 +1,6 @@
-@import 'https://fonts.googleapis.com/css?family=Dancing+Script|Josefin+Sans';
+@import 'https://fonts.googleapis.com/css?family=Dancing+Script|Abel';
 body {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Abel', sans-serif;
   min-width: 320px;
 }
 
@@ -34,7 +34,6 @@ h2 {
   margin-top: 20px;
   margin-bottom: 40px;
   padding-bottom: 20px;
-  background-color: #ffb6c1; 
   border-radius: 20px; 
 }
 
@@ -44,6 +43,7 @@ h2 {
 
 .pages .row {
   margin: 0;
+  padding: 10px 0;
 }
 
 .pages .accordion-content {
@@ -58,7 +58,7 @@ h2 {
 
 .intro .sub {
   margin-bottom: 15px;
-  font-size: 28px;
+  font-size: 30px;
 }
 .intro .main {
   margin: 25px 0;
@@ -74,7 +74,7 @@ h2 {
 
 @media only screen and (max-width: 480px) {
   .intro .main {
-    font-size: 48px;    
+    font-size: 56px;    
   }
 }
 
@@ -199,4 +199,8 @@ h2 {
 
 .modal-content {
   margin: 10px;
+}
+
+img.invitation-card {
+  width: 100%;
 }

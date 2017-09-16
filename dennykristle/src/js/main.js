@@ -34,6 +34,7 @@ $(document).ready( function(e){
     // initiate modal
     $('#openMapMatrimony').animatedModal({color: 'rgb(78, 78, 78)'});
     $('#openMapReception').animatedModal({color: 'rgb(78, 78, 78)'});
+    $('#openInvitationCard').animatedModal({color: 'rgb(78, 78, 78)'});
 
   }
 
