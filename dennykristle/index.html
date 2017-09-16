@@ -1,0 +1,120 @@
+<html>
+<head>
+<title>Denny & Kristle E-Invitation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width">
+<meta description="A Special Invitation For you to join Denny and Kristle Wedding Celebration">
+<link rel="stylesheet" href="src/css/bootstrap.css">
+<link rel="stylesheet" href="src/css/animate.min.css">
+<link rel="stylesheet" href="src/css/background-slide.css">
+<link rel="stylesheet" href="src/css/accordion.css">
+<link rel="stylesheet" href="src/css/viewer.min.css">
+<link rel="stylesheet" href="src/css/main.css">
+</head>
+<body>
+
+  <div id="loadingWrapper" class="loading-overlay">
+    <h1>Denny & Kristle E-Invitation</h1>
+    <img src="src/images/loading.gif" />
+  </div>
+
+  <div class="wrapper container center-block">
+
+    <ul class="cb-slideshow">
+      <li><span>Image 01</span></li>
+      <li><span>Image 02</span></li>
+      <li><span>Image 03</span></li>
+      <li><span>Image 04</span></li>
+      <li><span>Image 05</span></li>
+      <li><span>Image 06</span></li>
+      <li><span>Image 07</span></li>
+      <li><span>Image 08</span></li>
+      <li><span>Image 09</span></li>
+      <li><span>Image 10</span></li>
+      <li><span>Image 11</span></li>
+    </ul>
+
+    <div class="pages intro">
+      <h3>Dear <b id="inviteeName">Mr or Mrs ...</b>,</h3>
+      <div class="sub">Request the honor of your presence at the celebration of our marriage</div>
+      <div class="main">Denny & Kristle</div>
+    </div>
+
+    <div class="pages venue">
+      <label class="tab-title" for="toggle-venue">Save the Date!</label>
+      <div class="row">
+        <h3>Sunday, 5th November 2017</h3>
+        <div class="col-md-6 text-center">
+          <h3>Holy Matrimony</h3>
+          <p>at 11.00<br/>
+            <b>Vihara Ekayana Arama</b>,<br/>
+            Jl. Mangga II No. 8<br/>
+            Kel. Duri Kepa, Kec. Kebon Jeruk<br/>
+            Jakarta Barat
+            <a href="#mapMatrimony" id="openMapMatrimony">(Map)</a>
+          </p>
+        </div>
+
+        <!-- Map to Holy Matrimony -->
+        <div id="mapMatrimony">
+          <div class="closebt-container close-mapMatrimony">
+            <img class="closebt" src="src/images/closebt.svg">
+          </div>
+          <div class="modal-content">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.6487986877432!2d106.77616131440885!3d-6.177745262254097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f6f89de4cd91%3A0x563a3c71566860cb!2sWihara+Ekayana+Arama!5e0!3m2!1sen!2smy!4v1505550546728" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-6 text-center">
+          <h3>Wedding Reception</h3>
+          <p>at 19.00 - 21.00<br/>
+            <b>Arena JIEXPO Kemayoran</b>,<br/>
+            Gedung Pusat Niaga Lt.6 (Lawu Room)<br/>
+            Jl. Benyamin Sueb, Jakarta Barat
+            <a href="#mapReception" id="openMapReception">(Map)</a>
+          </p>
+        </div>
+
+        <!-- Map to Reception -->
+        <div id="mapReception">
+          <div class="closebt-container close-mapReception">
+            <img class="closebt" src="src/images/closebt.svg">
+          </div>
+          <div class="modal-content">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126940.24814232773!2d106.77538598339937!3d-6.146445934260967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5865972c49b%3A0x34958662bc58d4d!2sPRJ+Kemayoran+(Gambir+EXPO)!5e0!3m2!1sen!2smy!4v1505550723340" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pages rsvp">
+      <input class="accordion-toggle-checkbox" id="toggle-rsvp" type="checkbox" />
+      <label class="tab-title" for="toggle-rsvp"><span class="accordion-list-style">&#9656;</span> RSVP</label>
+      <div class="accordion-content row">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdH6tNKztHbcuoPr9Ev2Ly0JT7gX72M3sGNI89APcz7jlep_A/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Visitor info -->
+  <div id="visitorInfoWrapper" style="display:none">
+    <a href="#visitorInfo" id="openVisitorInfo">Click</a>
+    <div id="visitorInfo" class="container visitor">
+      <div class="modal-content">
+        <h1>Our Humble Apologies</h1>
+        <p>The E-Invitation of Denny & Kristle can only be accessed from the URL invitation sent by us. For any assistance, please contact us directly.</p>
+        <p>Sincerely yours,  Denny & Kristle</p>
+      </div>
+    </div>
+  </div>
+
+  
+  <script src="src/js/jquery.js"></script>
+  <script src="src/js/jquery.scrollTo.js"></script>
+  <script src="src/js/animatedModal.min.js"></script>
+  <script src="src/js/masonry.pkgd.min.js"></script>
+  <script src="src/js/viewer.min.js"></script>
+  <script src="src/js/invitation.js"></script>
+	<script src="src/js/main.js"></script>
+</body>
+</html>
