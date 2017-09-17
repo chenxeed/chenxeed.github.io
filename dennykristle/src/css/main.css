@@ -106,7 +106,7 @@ h2 {
 
 .accordion-toggle-checkbox:checked ~ .accordion-content {
   border-radius: 0 0 10px 10px;
-  background: rgba(255, 182, 193,0.8);  
+  background: rgba(255, 255, 255,0.8);  
 }
 
 
@@ -159,6 +159,22 @@ h2 {
 
   .gallery .gallery-list > div {
     width: 130px;
+  }
+}
+
+.venue .accordion-content {
+  height: 330px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .venue .accordion-content {
+    height: 500px;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .venue .accordion-content {
+    height: 550px;
   }
 }
 
