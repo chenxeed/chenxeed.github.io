@@ -36,6 +36,19 @@ $(document).ready( function(e){
     $('#openMapReception').animatedModal({color: 'rgb(78, 78, 78)'});
     $('#openInvitationCard').animatedModal({color: 'rgb(78, 78, 78)'});
 
+    // initiate gallery viewer
+    new Viewer( $('.gallery-list')[0], {
+      url: function(img){
+        return img.src;
+      }
+    });
+    $('.gallery-list').click(function(){
+      var viewer = new Viewer(this, {
+        url: function(img){
+          return img.src;
+        }
+      });
+    });
   }
 
 
