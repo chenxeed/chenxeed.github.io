@@ -34,7 +34,20 @@ $(document).ready( function(e){
     // initiate modal
     $('#openMapMatrimony').animatedModal({color: 'rgb(78, 78, 78)'});
     $('#openMapReception').animatedModal({color: 'rgb(78, 78, 78)'});
-    $('#openInvitationCard').animatedModal({color: 'rgb(78, 78, 78)'});
+
+    // initiate invitation viewer
+    new Viewer( $('.invitation-list')[0], {
+      url: function(img){
+        return img.src;
+      }
+    });
+    $('.invitation-list').click(function(){
+      var viewer = new Viewer(this, {
+        url: function(img){
+          return img.src;
+        }
+      });
+    });
 
     // initiate gallery viewer
     new Viewer( $('.gallery-list')[0], {
