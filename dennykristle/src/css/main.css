@@ -146,6 +146,36 @@ h2 {
   vertical-align: top;
 }
 
+.venue .accordion-content {
+  height: 480px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .venue .accordion-content {
+    height: 650px;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .venue .accordion-content {
+    height: 700px;
+  }
+
+  .venue .invitation-list > div {
+    width: 75px;
+  }
+}
+
+.rsvp .accordion-content {
+  height: 850px;
+}
+
+@media only screen and (max-width: 768px) {
+  .rsvp .accordion-content {
+    height: 1080px;
+  }
+}
+
 
 .gallery .accordion-content {
   overflow: auto;
@@ -180,33 +210,6 @@ h2 {
     width: 130px;
   }
 }
-
-.venue .accordion-content {
-  height: 480px;
-}
-
-@media only screen and (max-width: 1000px) {
-  .venue .accordion-content {
-    height: 650px;
-  }
-}
-
-@media only screen and (max-width: 380px) {
-  .venue .accordion-content {
-    height: 700px;
-  }
-}
-
-.rsvp .accordion-content {
-  height: 850px;
-}
-
-@media only screen and (max-width: 768px) {
-  .rsvp .accordion-content {
-    height: 1080px;
-  }
-}
-
 
 
 /* Misc */
