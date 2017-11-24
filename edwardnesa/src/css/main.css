@@ -2,7 +2,7 @@
 body {
   font-family: 'Abel', sans-serif;
   min-width: 320px;
-  color: #827a73;
+  color: #44403c;
 }
 
 h2 {
@@ -48,7 +48,7 @@ h2 {
 }
 
 .pages .accordion-content {
-  background: rgba(191, 168, 183,0.2);
+  background: rgba(184, 184, 184,0.2);
   margin: 0 10px;
 }
 
@@ -87,7 +87,7 @@ h2 {
   font-family: 'Dancing Script', cursive;
   font-size: 40px;
   color: white;
-  background: rgba(191, 168, 183,0.8);
+  background: rgba(184, 184, 184,0.8);
   border-radius: 10px;
   margin: 5px 10px 0 10px;
   padding-left: 15px;
@@ -96,26 +96,19 @@ h2 {
   text-align: center;
 }
 .tab-title:hover {
-  background: rgba(191, 168, 183,1);
+  background: rgba(184, 184, 184,1);
   font-weight: bold;
 }
 
 .accordion-toggle-checkbox:checked ~ .tab-title {
   border-radius: 10px 10px 0 0;
   transition: 0.5s all;
-  background: rgba(191, 168, 183,0.8);  
+  background: rgba(184, 184, 184,0.8);  
 }
 
 .accordion-toggle-checkbox:checked ~ .accordion-content {
   border-radius: 0 0 10px 10px;
   background: rgba(255, 255, 255,0.8);  
-}
-
-
-
-.venue .tab-title {
-  border-radius: 10px 10px 0 0;
-  transition: 0.5s all;
 }
 
 .venue h3 {
@@ -149,18 +142,18 @@ h2 {
 }
 
 .venue .accordion-content {
-  height: 480px;
+  height: 430px;
 }
 
 @media only screen and (max-width: 1000px) {
   .venue .accordion-content {
-    height: 650px;
+    height: 600px;
   }
 }
 
 @media only screen and (max-width: 380px) {
   .venue .accordion-content {
-    height: 700px;
+    height: 650px;
   }
 
   .venue .invitation-list > div {
