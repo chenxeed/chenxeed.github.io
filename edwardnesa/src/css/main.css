@@ -48,7 +48,11 @@ h2 {
 }
 
 .pages .accordion-content {
-  background: rgba(184, 184, 184,0.2);
+  background:
+    url(../images/content-bg-left.png) bottom left no-repeat,
+    url(../images/content-bg-right.png) bottom right no-repeat;
+  background-size: contain;
+  background-color: rgba(255,255,255,0.8);
   margin: 0 10px;
 }
 
@@ -108,7 +112,6 @@ h2 {
 
 .accordion-toggle-checkbox:checked ~ .accordion-content {
   border-radius: 0 0 10px 10px;
-  background: rgba(255, 255, 255,0.8);  
 }
 
 .venue h3 {
@@ -117,7 +120,6 @@ h2 {
 
 .venue .row {
   font-size: 20px;
-  background: rgba(255, 255, 255,0.8);  
   border-radius: 0 0 10px;
   margin: 0;
   margin: 0 10px;
