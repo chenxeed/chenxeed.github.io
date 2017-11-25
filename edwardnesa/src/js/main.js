@@ -1,6 +1,7 @@
-$(document).ready( function(e){
+document.addEventListener("DOMContentLoaded", function(event) {
 
   initViews();
+  $('#loadingWrapper').fadeOut(500);
 
   function initViews(){
 
@@ -13,12 +14,12 @@ $(document).ready( function(e){
     });
     $('.music.music-play').hide();
     $('.music.music-pause').on('click', function(){
-      sound.fade(1, 0, 1000);
+      sound.pause();
       $('.music.music-pause').hide();
       $('.music.music-play').show();
     });
     $('.music.music-play').on('click', function(){
-      sound.fade(0, 1, 1000);
+      sound.play();
       $('.music.music-play').hide();
       $('.music.music-pause').show();
     });
@@ -84,6 +85,4 @@ $(document).ready( function(e){
       });
     });
   }
-
-
 });
