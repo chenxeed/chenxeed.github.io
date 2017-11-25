@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Spectral+SC|Abel';
+@import 'https://fonts.googleapis.com/css?family=Spectral+SC|Dancing+Script|Abel';
 body {
   font-family: 'Abel', sans-serif;
   min-width: 320px;
@@ -40,6 +40,8 @@ h2 {
 
 .pages {
   position: relative;
+  max-width: 800px;
+  margin: auto;
 }
 
 .pages .row {
@@ -67,11 +69,16 @@ h2 {
 }
 .intro .main {
   margin: 25px 0;
-  font-family: 'Spectral SC', cursive;
+  font-family: 'Dancing Script', cursive;
   font-size: 106px;
 }
+.intro .main span {
+  font-family: 'Spectral SC', cursive;
+  font-style: italic;
+}
 .intro .date {
-  font-size: 46px;
+  font-weight: bold;
+  font-size: 40px;
 }
 
 
@@ -93,8 +100,8 @@ h2 {
   position: relative;
   display: block;
   cursor: pointer;
-  font-family: 'Spectral SC', cursive;
-  font-size: 30px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 40px;
   color: white;
   background: rgba(97, 97, 97,0.8);
   border-radius: 10px;
@@ -228,12 +235,12 @@ h2 {
 }
 
 .hashtag .tab-title {
-  font-size: 25px;
+  font-size: 32px;
 }
 
 .hashtag p {
   font-size: 20px;
-  padding: 5px;
+  padding: 5px 45px;
 }
 .hashtag p span {
   font-size: 24px;
@@ -242,6 +249,14 @@ h2 {
 .hashtag .icon {
   width: 50px;
 }
+
+@media only screen and (max-width: 380px) {
+
+  .hashtag .accordion-content {
+    height: 300px;
+  }
+}
+
 
 .options {
   position: fixed;
