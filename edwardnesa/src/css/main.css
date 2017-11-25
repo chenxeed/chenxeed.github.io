@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Dancing+Script|Abel';
+@import 'https://fonts.googleapis.com/css?family=Spectral+SC|Abel';
 body {
   font-family: 'Abel', sans-serif;
   min-width: 320px;
@@ -57,7 +57,7 @@ h2 {
 }
 
 .intro {
-  padding: 40px 10%;
+  padding: 20px 10%;
   text-align: center;
 }
 
@@ -67,9 +67,13 @@ h2 {
 }
 .intro .main {
   margin: 25px 0;
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Spectral SC', cursive;
   font-size: 106px;
 }
+.intro .date {
+  font-size: 46px;
+}
+
 
 @media only screen and (max-width: 768px) {
   .intro .main {
@@ -79,7 +83,8 @@ h2 {
 
 @media only screen and (max-width: 480px) {
   .intro .main {
-    font-size: 56px;    
+    font-size: 56px;
+    font-style: italic;
   }
 }
 
@@ -88,8 +93,8 @@ h2 {
   position: relative;
   display: block;
   cursor: pointer;
-  font-family: 'Dancing Script', cursive;
-  font-size: 40px;
+  font-family: 'Spectral SC', cursive;
+  font-size: 30px;
   color: white;
   background: rgba(97, 97, 97,0.8);
   border-radius: 10px;
@@ -216,6 +221,26 @@ h2 {
     width: 48%;
   }
 
+}
+
+.hashtag {
+  text-align: center;
+}
+
+.hashtag .tab-title {
+  font-size: 25px;
+}
+
+.hashtag p {
+  font-size: 20px;
+  padding: 5px;
+}
+.hashtag p span {
+  font-size: 24px;
+  font-weight: bold;
+}
+.hashtag .icon {
+  width: 50px;
 }
 
 .options {
