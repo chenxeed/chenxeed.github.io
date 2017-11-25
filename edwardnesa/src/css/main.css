@@ -91,7 +91,7 @@ h2 {
   font-family: 'Dancing Script', cursive;
   font-size: 40px;
   color: white;
-  background: rgba(184, 184, 184,0.8);
+  background: rgba(97, 97, 97,0.8);
   border-radius: 10px;
   margin: 5px 10px 0 10px;
   padding-left: 15px;
@@ -100,14 +100,14 @@ h2 {
   text-align: center;
 }
 .tab-title:hover {
-  background: rgba(184, 184, 184,1);
+  background: rgba(97, 97, 97,1);
   font-weight: bold;
 }
 
 .accordion-toggle-checkbox:checked ~ .tab-title {
   border-radius: 10px 10px 0 0;
   transition: 0.5s all;
-  background: rgba(184, 184, 184,0.8);  
+  background: rgba(97, 97, 97,0.8);  
 }
 
 .accordion-toggle-checkbox:checked ~ .accordion-content {
