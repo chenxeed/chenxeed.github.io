@@ -65,11 +65,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
 
     // initiate masonry on gallery
-    $('.gallery-list').masonry({
+    var $gallery = $('.gallery-list').masonry({
       columnWidth: '.gallery-list .grid-sizer',
       gutter: '.gallery-list .gutter-sizer',
       percentPosition: true
     });
+    $('.toggle-gallery').on('click', function(){
+      $gallery.masonry('layout');
+    })
 
     // initiate gallery viewer
     new Viewer( $('.gallery-list')[0], {
