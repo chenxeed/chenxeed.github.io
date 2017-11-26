@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       gutter: '.gallery-list .gutter-sizer',
       percentPosition: true
     });
-    $('.toggle-gallery').on('click', function(){
+    $('#toggle-gallery').on('click', function(){
       $gallery.masonry('layout');
     })
 
