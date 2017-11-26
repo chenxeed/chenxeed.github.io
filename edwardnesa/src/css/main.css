@@ -86,12 +86,18 @@ h2 {
   .intro .main {
     font-size: 72px;    
   }
+  .intro .date {
+    font-size: 34px;
+  }
 }
 
 @media only screen and (max-width: 480px) {
   .intro .main {
     font-size: 56px;
     font-style: italic;
+  }
+  .intro .date {
+    font-size: 26px;
   }
 }
 
