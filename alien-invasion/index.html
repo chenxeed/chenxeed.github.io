@@ -19,31 +19,32 @@
         <header>
             <div class="header">
                 <div class="hangboard-wrapper">
-                    <div class="hangboard animated">Alien Invasion!</div>
+                    <div class="hangboard animated">
+                        Alien Invasion!
+                    </div>
                 </div>
-                <div class="title"></div>
             </div>
         </header>
-
-        <div class="control">
-            <div class="statistic">
-                Time : <span id="timer"></span><br>
-                Spawn : <span id="spawn"></span>
-                Dead : <span id="dead"></span>
-            </div>
-            <div>
-                Destroy Type :
-                <select id="destroyType">
-                    <option value="drag">Drag</option>
-                    <option value="click">Click</option>
-                    <option value="hover">Hover</option>
-                </select>
-            </div>
-            <div>
-                <button id="buttonStart" onclick="startGame();">START</button>
-                <button id="buttonPause" style="display:none" onclick="pauseGame();">PAUSE</button>
-                <button id="buttonContinue" style="display:none" onclick="continueGame();">CONTINUE</button>
-                <button id="buttonStop" style="display:none" onclick="finishGame();">STOP</button>
+        
+        <div class="control-wrapper">
+            <div class="control">
+                <div class="statistic">
+                    Spawn : <span id="spawn"></span>
+                    Dead : <span id="dead"></span>
+                    Time : <span id="timer"></span>
+                </div>
+                <div class="mode">
+                    Destroy Type :
+                    <select id="destroyType">
+                        <option value="drag">Drag</option>
+                        <option value="click">Click</option>
+                        <option value="hover">Hover</option>
+                    </select>
+                    <button id="buttonStart" onclick="startGame();">START</button>
+                    <button id="buttonPause" style="display:none" onclick="pauseGame();">PAUSE</button>
+                    <button id="buttonContinue" style="display:none" onclick="continueGame();">CONTINUE</button>
+                    <button id="buttonStop" style="display:none" onclick="finishGame();">STOP</button>
+                </div>
             </div>
         </div>
 
@@ -60,9 +61,6 @@
                     var circle_size = 30; //Size of the circle
                     var destroy_type = 'hover'; //How to destroy the circle
                     var custom_config = true;
-
-                    //Sound
-                    var audio_laser = new Audio();
 
                     // Creates canvas 320 × 200 at 10, 50
                     var paper = Raphael('raphaelCanvas');
@@ -98,12 +96,10 @@
 
                         this.animate({width: circle_size + 10, fill: '#f0f'}, 200);
                     },
-                            move = function(dx, dy) {
-                        if (this.ox + dx > 0 && this.ox + dx < 500)
-                            this.animate({x: this.ox + dx}, 200);
-                            playSoundLaser();
+                    move = function(dx, dy) {
+                        this.animate({x: this.ox + dx}, 0);
                     },
-                            up = function() {
+                    up = function() {
                         this.animate({width: circle_size, fill: '#f00'}, 200);
                     };
 
@@ -125,6 +121,7 @@
                             $('#buttonStart').hide();
                             $('#buttonPause').show();
                             $('#buttonStop').show();
+                            $('.control-wrapper').css( 'top', 0 );
 
                             destroy_type = $('#destroyType').val();
                             $('#destroyType').prop('disabled', true);
@@ -133,7 +130,7 @@
                                     case 'drag' :
                                         move_speed = 50;
                                         max_circle = 50;
-                                        circle_delay = 1000;
+                                        circle_delay = 700;
                                         break;
                                     case 'click':
                                         move_speed = 50;
@@ -172,6 +169,7 @@
                         stopCircle();
                         showResult();
                         resetCircle();
+                        pause_box.hide();
                         is_game_started = false;
                         timer = 0;
 
@@ -179,6 +177,7 @@
                         $('#buttonPause').hide();
                         $('#buttonContinue').hide();
                         $('#buttonStop').hide();
+                        $('.control-wrapper').css( 'top', 150 );
                         $('#destroyType').prop('disabled', false);
                     }
 
@@ -222,7 +221,16 @@
 
                             switch (destroy_type) {
                                 case 'drag' :
-                                    paper.set(circle[circle_count]).drag(move, start, up);
+                                    paper
+                                        .set(circle[circle_count])
+                                        .drag(move, start, function(){
+                                            up.apply( this );
+                                            if( this.attrs.x < 100 ) {
+                                                this.remove();
+                                                playSoundLaser();
+                                                circle_die++;
+                                            }
+                                        });
                                     break;
                                 case 'click':
                                     paper.set(circle[circle_count]).click(function() {
@@ -299,8 +307,7 @@
                     }
                     
                     function playSoundLaser(){
-                        audio_laser.src = document.getElementById('soundLaser').src;
-                        audio_laser.load();
+                        audio_laser = document.getElementById('soundLaser');
                         audio_laser.play();
                     }
 

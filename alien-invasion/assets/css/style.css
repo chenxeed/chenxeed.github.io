@@ -10,7 +10,7 @@ body {
     background: black;
 }
 .header .hangboard {
-    position: relative; top: 50px;
+    position: relative; top: 20px; z-index: 100;
     width: 400px; margin: auto; padding: 10px;
     border: 3px solid; border-radius: 10px;
     background: white;
@@ -21,10 +21,6 @@ body {
     width: 60%; height: 100px;
     border-left: 5px solid;
     border-right: 5px solid;
-}
-
-.header .title {
-    width: 100%; height: 150px; text-align: center; font-size: 36px;
 }
 
 /* Background */
