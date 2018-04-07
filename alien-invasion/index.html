@@ -15,7 +15,7 @@
         <title>Alien Invasion</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta id="vp" name="viewport" content="width=device-width,initial-scale=1.0">
         <!--Style-->
         <link href="assets/css/normalize.css" type="text/css" rel="stylesheet" />
         <link href="assets/css/animate.css" type="text/css" rel="stylesheet" />
@@ -50,6 +50,7 @@
                         <option value="click">Click</option>
                         <option value="hover">Hover</option>
                     </select>
+                    <div id="destroyTypeDesc">Drag them back</div>
                     <button id="buttonStart" onclick="startGame();">START</button>
                     <button id="buttonPause" style="display:none" onclick="pauseGame();">PAUSE</button>
                     <button id="buttonContinue" style="display:none" onclick="continueGame();">CONTINUE</button>
@@ -131,6 +132,7 @@
                             $('#buttonStart').hide();
                             $('#buttonPause').show();
                             $('#buttonStop').show();
+                            $('#destroyTypeDesc').hide();
                             $('.control-wrapper').css( 'top', 0 );
 
                             destroy_type = $('#destroyType').val();
@@ -138,8 +140,8 @@
                             if (custom_config === true) {
                                 switch (destroy_type) {
                                     case 'drag' :
-                                        move_speed = 50;
-                                        max_circle = 50;
+                                        move_speed = 30;
+                                        max_circle = 0;
                                         circle_delay = 700;
                                         break;
                                     case 'click':
@@ -187,6 +189,7 @@
                         $('#buttonPause').hide();
                         $('#buttonContinue').hide();
                         $('#buttonStop').hide();
+                        $('#destroyTypeDesc').show();
                         $('.control-wrapper').css( 'top', 150 );
                         $('#destroyType').prop('disabled', false);
                     }
@@ -250,7 +253,7 @@
                                     });
                                     break;
                                 case 'hover':
-                                    paper.set(circle[circle_count]).hover(function() {
+                                    paper.set(circle[circle_count]).mousemove(function() {
                                         this.remove();
                                         playSoundLaser();
                                         circle_die++;
@@ -319,6 +322,31 @@
                     function playSoundLaser(){
                         audio_laser = document.getElementById('soundLaser');
                         audio_laser.play();
+                    }
+
+                    function showDescription() {
+                        var type = document.getElementById('destroyType').value;
+                        var desc = document.getElementById('destroyTypeDesc');
+                        var message;
+                        if( type === 'drag' ) {
+                            message = 'Drag the aliens back to where they come!';
+                        } else if ( type === 'click' ) {
+                            message = 'Poke the aliens to banish them!';
+                        } else if ( type === 'hover' ) {
+                            message = 'Swipe the aliens away!';
+                        }
+                        desc.innerHTML = message;
+                    }
+
+                    document.getElementById('destroyType')
+                        .addEventListener( 'change', function(){
+                            showDescription();
+                        });
+                    showDescription();
+
+                    if (screen.width < 600) {
+                        var mvp = document.getElementById('vp');
+                        mvp.setAttribute('content','user-scalable=no,width=600');
                     }
 
             </script>
