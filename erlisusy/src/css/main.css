@@ -1,0 +1,313 @@
+@import 'https://fonts.googleapis.com/css?family=Spectral+SC|Dancing+Script|Abel';
+body {
+  font-family: 'Abel', sans-serif;
+  min-width: 320px;
+  color: #44403c;
+}
+
+h2 {
+  text-align: center;
+  font-size: 40px;
+}
+
+/* for visitor */
+.loading-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 1000;
+  background: #fbfbfb;
+  text-align: center;
+}
+.loading-overlay img {
+  width: 100%;
+  max-width: 300px;
+}
+
+
+.visitor {
+  font-size: 20px;
+  text-align: center;
+}
+
+.wrapper {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-radius: 20px; 
+}
+
+.pages {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+}
+
+.pages .row {
+  margin: 0;
+  padding: 10px 0;
+}
+
+.pages .accordion-content {
+  background:
+    url(../images/content-bg-left.png) bottom left no-repeat,
+    url(../images/content-bg-right.png) bottom right no-repeat;
+  background-size: contain;
+  background-color: rgba(255,255,255,0.8);
+  margin: 0 10px;
+}
+
+.intro {
+  padding: 20px 10%;
+  text-align: center;
+}
+
+.intro .sub {
+  margin-bottom: 15px;
+  font-size: 30px;
+}
+.intro .main {
+  margin: 25px 0;
+  font-family: 'Dancing Script', cursive;
+  font-size: 106px;
+  color: #b39461;
+}
+.intro .main span {
+  font-family: 'Spectral SC', cursive;
+  font-style: italic;
+}
+.intro .date {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .intro .main {
+    font-size: 72px;    
+  }
+  .intro .date {
+    font-size: 34px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .intro .main {
+    font-size: 56px;
+    font-style: italic;
+  }
+  .intro .date {
+    font-size: 26px;
+  }
+}
+
+
+.tab-title {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  font-family: 'Dancing Script', cursive;
+  font-size: 36px;
+  color: white;
+  background: rgba(255, 0, 0, 0.8);
+  border-radius: 10px;
+  margin: 5px 10px 0 10px;
+  padding-left: 15px;
+  transition: 0.2s all;
+  font-weight: normal;
+  text-align: center;
+}
+.tab-title:hover {
+  background: rgba(255, 0, 0, 1);
+  font-weight: bold;
+}
+
+.accordion-toggle-checkbox:checked ~ .tab-title {
+  border-radius: 10px 10px 0 0;
+  transition: 0.5s all;
+  background: rgba(255, 0, 0, 1);  
+}
+
+.accordion-toggle-checkbox:checked ~ .accordion-content {
+  border-radius: 0 0 10px 10px;
+}
+
+.venue h3 {
+  text-align: center;
+}
+
+.venue .row {
+  font-size: 20px;
+  border-radius: 0 0 10px;
+  margin: 0;
+  margin: 0 10px;
+}
+
+.venue .invitation-list {
+  margin: 20px;
+  text-align: center;
+}
+
+.venue .invitation-list > div {
+  width: 100px;
+  margin-bottom: 10px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.venue .invitation-list > div img {
+  width: 100%;
+  border-radius: 10px;
+  vertical-align: top;
+}
+
+.venue .accordion-content {
+  height: 430px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .venue .accordion-content {
+    height: 600px;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .venue .accordion-content {
+    height: 650px;
+  }
+
+  .venue .invitation-list > div {
+    width: 75px;
+  }
+}
+
+.rsvp .accordion-content {
+  height: 850px;
+}
+
+@media only screen and (max-width: 768px) {
+  .rsvp .accordion-content {
+    height: 1080px;
+  }
+}
+
+
+.gallery .accordion-content {
+  overflow: auto;
+  height: 600px;
+}
+
+.gallery .gallery-list {
+  margin: 20px;
+  text-align: center;
+}
+
+.gallery .gallery-list .grid-sizer,
+.gallery .gallery-list > div {
+  width: 22%;
+}
+
+.gallery .gallery-list .gutter-sizer {
+  width: 4%;
+}
+
+.gallery .gallery-list > div {
+  margin-bottom: 10px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.gallery .gallery-list > div img {
+  width: 100%;
+  border-radius: 10px;
+  vertical-align: top;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .gallery .accordion-content {
+    height: 620px;
+  }
+
+  .gallery .gallery-list .grid-sizer,
+  .gallery .gallery-list > div {
+    width: 48%;
+  }
+
+}
+
+.hashtag {
+  text-align: center;
+}
+
+.hashtag .tab-title {
+  font-size: 32px;
+}
+
+.hashtag p {
+  font-size: 20px;
+  padding: 5px 45px;
+}
+.hashtag p span {
+  font-size: 24px;
+  font-weight: bold;
+}
+.hashtag .icon {
+  width: 50px;
+}
+
+@media only screen and (max-width: 380px) {
+
+  .hashtag .accordion-content {
+    height: 300px;
+  }
+}
+
+
+.options {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+.options ul {
+  list-style: none;
+}
+
+.options .music {
+  width: 40px;
+  cursor: pointer;
+}
+
+
+/* Misc */
+
+/* Thanks to http://joaopereirawd.github.io/animatedModal.js/ */
+.closebt-container {
+  position: relative;
+  width:100%;
+  text-align:center;
+  margin:20px 0;
+}
+
+.closebt {
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  cursor:pointer;
+}
+
+.closebt:hover {
+  transform:rotate(90deg);
+}
+
+.modal-content {
+  margin: 10px;
+}
+
+img.invitation-card {
+  width: 45%;
+}
