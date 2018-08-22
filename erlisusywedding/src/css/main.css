@@ -63,15 +63,21 @@ h2 {
   text-align: center;
 }
 
+.intro h2 {
+  text-shadow: 1px 1px white;  
+}
+
 .intro .sub {
   margin-bottom: 15px;
   font-size: 30px;
+  text-shadow: 1px 1px white;
 }
 .intro .main {
   margin: 25px 0;
   font-family: 'Dancing Script', cursive;
   font-size: 106px;
-  color: #b39461;
+  color: #f9d9a5;
+  text-shadow: 2px 2px #af6c08;
 }
 .intro .main span {
   font-family: 'Spectral SC', cursive;
@@ -110,7 +116,7 @@ h2 {
   font-family: 'Dancing Script', cursive;
   font-size: 36px;
   color: white;
-  background: rgba(255, 0, 0, 0.8);
+  background: rgba(248, 110, 110, 0.8);
   border-radius: 10px;
   margin: 5px 10px 0 10px;
   padding-left: 15px;
@@ -119,14 +125,14 @@ h2 {
   text-align: center;
 }
 .tab-title:hover {
-  background: rgba(255, 0, 0, 1);
+  background: rgba(255, 182, 193, 1);
   font-weight: bold;
 }
 
 .accordion-toggle-checkbox:checked ~ .tab-title {
   border-radius: 10px 10px 0 0;
   transition: 0.5s all;
-  background: rgba(255, 0, 0, 1);  
+  background: rgba(255, 182, 193, 1);  
 }
 
 .accordion-toggle-checkbox:checked ~ .accordion-content {

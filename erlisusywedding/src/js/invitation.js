@@ -1,6 +1,6 @@
 function Invitation(cb){
 
-  $.ajax('https://spreadsheets.google.com/feeds/list/14SvDtFFYpCw4QbEeAcRj0T2gWR6tTisM9c84VnWfBf0/1/public/values?alt=json')
+  $.ajax('https://spreadsheets.google.com/feeds/list/1Fy_O0vxOXmUt30iLE-3WKAUgkF2cJTc6DpRrlYH0OOY/1/public/values?alt=json')
   .done(function(output){
     var invitation_names = output.feed.entry.map(function(row){
       var to_return = {};
@@ -35,7 +35,7 @@ function Invitation(cb){
   }
 
   function getURLFromPassword(password){
-    return window.location.origin+'/edwardnesa/index.html?o='+password;
+    return window.location.origin+'/erlisusywedding/index.html?o='+password;
   }
 
 }
