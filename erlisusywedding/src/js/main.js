@@ -49,12 +49,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
     // Set some date in the future. In this case, it's always Jan 1
     var futureDate  = new Date(2018, 8, 18);
     // Calculate the difference in seconds between the future and current date
-    var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+    var diff = ( futureDate.getTime() / 1000 - currentDate.getTime() / 1000 );
     // Only show countdown when the countdown hasn't reach 0
     if( diff > 0 ) {
       $('.countdown').FlipClock(diff, {
         clockFace: 'DailyCounter',
         countdown : true
+      });
+    } else {
+      $('.countdown').FlipClock( (diff*-1), {
+        clockFace: 'DailyCounter'
       });
     }
 
