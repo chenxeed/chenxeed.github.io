@@ -1,28 +1,51 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 
+
+  // validate if visitor have correct ID
+  // Invitation(function(invitation){
+
+
+  //   var password = invitation.getPasswordFromURL( window.location.href );
+  //   var invitee = invitation.getInviteeFromPassword(password);
+  //   if(!invitee){
+  //     $('#visitorInfoWrapper').show();
+  //     $('#openVisitorInfo').animatedModal();
+  //     $('#openVisitorInfo').click();
+  //     return;
+  //   } else {
+  //     $('#visitorInfoWrapper').remove();
+  //     $('#inviteeName').text(invitee.name);
+  //     initViews();
+  //   }
+
+  //   setTimeout(function(){
+  //     $('#loadingWrapper').fadeOut(500);
+  //   }, 100);
+  // });
+
   initViews();
   $('#loadingWrapper').fadeOut(500);
 
   function initViews(){
 
     // play the music
-    // var sound = new Howl({
-    //   src: ['src/audio/perfect.mp3', 'src/audio/perfect.ogg'],
-    //   autoplay: true,
-    //   loop: true,
-    //   volume: 0.5
-    // });
-    // $('.music.music-play').hide();
-    // $('.music.music-pause').on('click', function(){
-    //   sound.pause();
-    //   $('.music.music-pause').hide();
-    //   $('.music.music-play').show();
-    // });
-    // $('.music.music-play').on('click', function(){
-    //   sound.play();
-    //   $('.music.music-play').hide();
-    //   $('.music.music-pause').show();
-    // });
+    var sound = new Howl({
+      src: ['src/audio/ost.mp3'],
+      autoplay: true,
+      loop: true,
+      volume: 0.5
+    });
+    $('.music.music-play').hide();
+    $('.music.music-pause').on('click', function(){
+      sound.pause();
+      $('.music.music-pause').hide();
+      $('.music.music-play').show();
+    });
+    $('.music.music-play').on('click', function(){
+      sound.play();
+      $('.music.music-play').hide();
+      $('.music.music-pause').show();
+    });
 
     // // init flipclock
     // // Grab the current date

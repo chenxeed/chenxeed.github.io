@@ -1,6 +1,6 @@
 function Invitation(cb){
 
-  $.ajax('https://spreadsheets.google.com/feeds/list/14SvDtFFYpCw4QbEeAcRj0T2gWR6tTisM9c84VnWfBf0/1/public/values?alt=json')
+  $.ajax('https://spreadsheets.google.com/feeds/list/1ar6WIxfD9tMIE2JrgjlNijORoTA40M8E9EG619PvpMI/1/public/values?alt=json')
   .done(function(output){
     var invitation_names = output.feed.entry.map(function(row){
       var to_return = {};
