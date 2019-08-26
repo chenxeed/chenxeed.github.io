@@ -1,0 +1,12 @@
+#scene2 .background img {
+  position: relative;
+  top: 0
+}
+
+#scene2 img.fireball-1 {
+  position: absolute;
+  left: 100px;
+  top: 500px;
+  width: 0;
+  height: 0;
+}

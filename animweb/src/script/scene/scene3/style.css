@@ -1,0 +1,150 @@
+#scene3 img {
+  position: absolute;
+}
+
+#scene3 .area {
+  position: absolute;
+  top: -120px;
+  left: 0;
+}
+
+#scene3 .monster-position {
+  position: absolute;
+  top: 20px;
+  left: 150px;
+}
+
+#scene3 img.monster {
+  opacity: 0;
+  top: 0px; left: 0px;
+  width: 500px;
+  animation: breath 2s infinite;
+}
+
+@-webkit-keyframes breath {
+  0% {
+    width: 510px;
+    top:-10px;
+    left: -5px;
+  }
+  50% {
+    width: 500px;
+    top: 0px;
+    left: 0px;
+  }
+  100% {
+    width: 510px;
+    top:-10px;
+    left: -5px;
+  }
+}
+
+#scene3 img.effect {
+  opacity: 0;
+  top: 300px;
+  left: 100px;
+}
+
+#scene3 .beams {
+  position: absolute;
+  width: 100%; height: 100%;
+}
+
+#scene3 .beams .beam {
+  position: absolute;
+  opacity: 0;
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff3019+16,cf0404+60 */
+  background: #ff3019; /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, #ff3019 16%, #cf0404 60%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, #ff3019 16%,#cf0404 60%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, #ff3019 16%,#cf0404 60%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3019', endColorstr='#cf0404',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+#scene3 .beam-fight {
+  position: absolute;
+  width: 100%; height: 100%;  
+}
+
+#scene3 .beam-fight .beam-wrapper {
+  position: absolute;
+}
+
+#scene3 .beam-fight .beam-wrapper.enemy {
+  top: 90px;
+  left: 180px;
+}
+
+#scene3 .beam-fight .beam-wrapper.me {
+  top: 550px;
+  left: 600px;
+}
+
+#scene3 .beam-fight .charge {
+  position: absolute;
+  width: 0; height: 0;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+
+#scene3 .beam-fight .charge.enemy-charge {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff3019+16,cf0404+60 */
+  background: #ff3019; /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, #ff3019 16%, #cf0404 60%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, #ff3019 16%,#cf0404 60%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, #ff3019 16%,#cf0404 60%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3019', endColorstr='#cf0404',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+#scene3 .beam-fight .charge.me-charge {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e1ffff+0,e1ffff+7,e1ffff+12,fdffff+12,e6f8fd+30,c8eefb+54,bee4f8+75,b1d8f5+100;Blue+Pipe+%232 */
+  background: #e1ffff; /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, #e1ffff 0%, #e1ffff 7%, #e1ffff 12%, #fdffff 12%, #e6f8fd 30%, #c8eefb 54%, #bee4f8 75%, #b1d8f5 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#fdffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, #e1ffff 0%,#e1ffff 7%,#e1ffff 12%,#fdffff 12%,#e6f8fd 30%,#c8eefb 54%,#bee4f8 75%,#b1d8f5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1ffff', endColorstr='#b1d8f5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+#scene3 .need-help {
+  display: none;
+  position: absolute;
+  bottom: 100px;
+  right: 100px;
+  width: 400px;
+  height: 100px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#scene3 button {
+
+  animation: grow 2s infinite;
+}
+
+@-webkit-keyframes grow {
+  0% {
+    width: 100px;
+    height: 50px;
+  }
+  50% {
+    width: 150px;
+    height: 100px;
+  }
+  100% {
+    width: 100px;
+    height: 50px;
+  }
+}
+
+#scene3 .overlay-white {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+}

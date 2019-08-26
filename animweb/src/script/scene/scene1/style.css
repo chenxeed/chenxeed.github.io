@@ -1,0 +1,13 @@
+#scene1 .narration {
+  position: relative;
+  z-index: 10;
+  top: 30px;
+}
+
+#scene1 .narration p {
+  margin: 0;
+  opacity: 0;
+  font-size: 32px;
+  text-shadow: 0px 2px 5px grey;
+  color: white;
+}
