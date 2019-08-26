@@ -26,6 +26,14 @@ module.exports = {
         exclude: /(node_modules)/,
         loader: 'html-loader'
       },
+      {
+        test: /\.(png|jpg|gif|cur|svg)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 8192, // If a file exceeds this size, use file-loader instead
+          fallback: 'file-loader'
+        }
+      },
       { test : /\.(css)$/, loaders : [ 'style', 'raw' ]}
     ]
   },
