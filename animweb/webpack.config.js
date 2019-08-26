@@ -7,7 +7,7 @@ module.exports = {
   output: {
     filename: "script.js",
     path : process.cwd() + '/bundle',
-    publicPath : '/bundle/'
+    publicPath : 'bundle/'
   },
   module: {
     loaders: [
