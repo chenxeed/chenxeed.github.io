@@ -21,7 +21,7 @@
     "css-loader": "^0.27.3",
     "html-loader": "^0.4.5",
     "jquery": "^3.1.1",
-    "node-sass": "^4.5.0",
+    "node-sass": "^7.0.0",
     "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.3",
     "scss-loader": "0.0.1",
